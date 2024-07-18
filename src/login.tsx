@@ -38,7 +38,6 @@ const Login = ({ setEscaped }: { setEscaped: (l: boolean) => void }) => {
 
   const handleSubmit = () => {
     if (
-      dayOfWeek.toLocaleLowerCase() === "friday" &&
       day === "7" &&
       month === "8" &&
       time?.hour() === 18 &&
@@ -94,26 +93,6 @@ const Login = ({ setEscaped }: { setEscaped: (l: boolean) => void }) => {
         }}
       />
       <Grid container spacing={2}>
-        <Grid item xs={3}>
-          <FormControl fullWidth>
-            <InputLabel id="dow-label">Day of week?</InputLabel>
-            <Select
-              labelId="dow-label"
-              id="dow-select"
-              value={dayOfWeek}
-              label="Day of the week?"
-              onChange={handleDOWChange}
-            >
-              {dow.map((day) => {
-                return (
-                  <MenuItem key={day} value={String(day)}>
-                    {day}
-                  </MenuItem>
-                );
-              })}
-            </Select>
-          </FormControl>
-        </Grid>
         <Grid item xs={3}>
           <FormControl fullWidth>
             <InputLabel id="day-label">Day?</InputLabel>
